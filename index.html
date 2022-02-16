@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tebak Angka Asik Sekali</title>
+</head>
+<body>
+    <div id="welcome-page">
+        <h1>Selamat Datang di Permainan Tebak Angka!</h1>
+        <button id="button">Klik Untuk Memulai!</button>
+
+    </div>
+    <div id="message">
+        <h3>
+            P.S. Try the "Cancel" button in the prompt :)
+        </h3>
+    </div>
+    <script>
+        //Start The Game
+        document.getElementById('button').onclick = function(e) {
+            
+            do {
+            alert("Good Luck!");
+            //Generate Random Numbers from 1-100
+            angkarandom = Math.floor(Math.random() * 100 + 1);
+            console.log("angka random: " + angkarandom);
+
+            do {
+                tebak = window.prompt("Masukkan Tebakanmu");
+                if (tebak > angkarandom) {
+                    if (tebak == null) {
+                        window.alert("Selamat tinggal! Sampai berjumpa lagi");
+                        window.prompt.close();
+                    }
+                    else {
+                        window.alert("Angka " + tebak + " terlalu besar, coba lagi!")
+                    }
+                    
+                }
+                else {
+                    if (tebak < angkarandom) {
+                         if (tebak == null) {
+                                window.alert("Selamat tinggal! Sampai berjumpa lagi");
+                                window.prompt.close();
+                            }
+                        else {
+                            window.alert("Angka " + tebak + " terlalu kecil, coba lagi!");
+                        }
+                    }
+                }
+                
+                
+            }
+            while (tebak != angkarandom);
+
+            window.alert("Tebakanmu benar!")
+
+            
+
+            main_lagi = confirm("Mau Main Lagi?");
+        }
+        while (main_lagi == true);
+    }
+        
+    </script>
+    
+</body>
+</html>
